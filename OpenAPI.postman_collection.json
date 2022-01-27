@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "76ba8ab6-10de-4517-8962-ec8b6832e6eb",
+		"name": "OpenAPI definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "comments",
+							"item": [
+								{
+									"name": "{comment Id}",
+									"item": [
+										{
+											"name": "get Book Comment",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/comments/:commentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"comments",
+														":commentId"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "44702573",
+															"description": "(Required) "
+														},
+														{
+															"key": "commentId",
+															"value": "44702573",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/books/:id/comments/:commentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"books",
+																":id",
+																"comments",
+																":commentId"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "44702573",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "commentId",
+																	"value": "44702573",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "delete Book Comment",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/comments/:commentId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"comments",
+														":commentId"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "44702573",
+															"description": "(Required) "
+														},
+														{
+															"key": "commentId",
+															"value": "44702573",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/books/:id/comments/:commentId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"books",
+																":id",
+																"comments",
+																":commentId"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "44702573",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "commentId",
+																	"value": "44702573",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "create Book Comment",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"id\": -61302093,\n    \"username\": \"incididunt aliquip cupidatat fugiat\",\n    \"content\": \"enim sed et do\",\n    \"score\": -30514540\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/books/:id/comments",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id",
+												"comments"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "44702573",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"id\": -61302093,\n    \"username\": \"incididunt aliquip cupidatat fugiat\",\n    \"content\": \"enim sed et do\",\n    \"score\": -30514540\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/books/:id/comments",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"books",
+														":id",
+														"comments"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "44702573",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get Book With Comments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44702573",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "44702573",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "delete Book",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "44702573",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/books/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"books",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "44702573",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "list Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/books/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/books/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "create Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 21022432,\n    \"title\": \"amet adipisicing velit et\",\n    \"summary\": \"dolor ut\",\n    \"author\": \"culpa commodo\",\n    \"editorial\": \"nulla Lorem qui\",\n    \"publicationYear\": -73332438,\n    \"comments\": [\n        {\n            \"id\": 12631415,\n            \"username\": \"Excepteur mollit ut id Duis\",\n            \"content\": \"culpa aute sit proident\",\n            \"score\": -31977842\n        },\n        {\n            \"id\": 73916441,\n            \"username\": \"deserunt Lorem quis\",\n            \"content\": \"culpa dolor nulla voluptate\",\n            \"score\": 75368355\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/books/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": -20501229,\n    \"title\": \"quis aliqua\",\n    \"summary\": \"nisi\",\n    \"author\": \"veniam non sint sed exercitation\",\n    \"editorial\": \"do enim eiusmod\",\n    \"publicationYear\": -38314983,\n    \"comments\": [\n        {\n            \"id\": 16511063,\n            \"username\": \"aute anim ea nostrud\",\n            \"content\": \"irure do exercitation\",\n            \"score\": 13357333\n        },\n        {\n            \"id\": 3695049,\n            \"username\": \"est\",\n            \"content\": \"officia fugiat tempor ut\",\n            \"score\": 24470787\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/books/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

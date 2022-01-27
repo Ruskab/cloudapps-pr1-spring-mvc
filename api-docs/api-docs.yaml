@@ -1,0 +1,233 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /books/{id}/comments:
+    post:
+      tags:
+        - book-rest-controller
+      operationId: createBookComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentDto'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CommentDto'
+  /books/:
+    get:
+      tags:
+        - book-rest-controller
+      operationId: listBooks
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookDto_Basic'
+    post:
+      tags:
+        - book-rest-controller
+      operationId: createBook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookDto'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BookDto'
+  /books/{id}:
+    get:
+      tags:
+        - book-rest-controller
+      operationId: getBookWithComments
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/BookDto_BookWithComments'
+    delete:
+      tags:
+        - book-rest-controller
+      operationId: deleteBook
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+  /books/{id}/comments/{commentId}:
+    get:
+      tags:
+        - book-rest-controller
+      operationId: getBookComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: commentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/CommentDto_Basic'
+    delete:
+      tags:
+        - book-rest-controller
+      operationId: deleteBookComment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: commentId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    CommentDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        content:
+          type: string
+        score:
+          type: integer
+          format: int32
+    BookDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        summary:
+          type: string
+        author:
+          type: string
+        editorial:
+          type: string
+        publicationYear:
+          type: integer
+          format: int32
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommentDto'
+    BookDto_BookWithComments:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        summary:
+          type: string
+        author:
+          type: string
+        editorial:
+          type: string
+        publicationYear:
+          type: integer
+          format: int32
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommentDto_BookWithComments'
+    CommentDto_BookWithComments:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        content:
+          type: string
+        score:
+          type: integer
+          format: int32
+    CommentDto_Basic:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        content:
+          type: string
+        score:
+          type: integer
+          format: int32
+    BookDto_Basic:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string

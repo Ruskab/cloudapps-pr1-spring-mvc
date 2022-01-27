@@ -1,0 +1,79 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="/css/style.css" />
+	<title></title>
+</head>
+
+<body>
+
+<div class="container">
+	<div  style="width: 50vw;">
+
+		<div class="red-border">
+			<div style="padding: 5%">
+				<h3>Book</h3>
+				{{#book.value.title}}
+				<p>Title: {{book.value.title}}</p>
+				{{/book.value.title}}
+
+				{{#book.value.summary}}
+				<p>summary: {{book.value.summary}}</p>
+				{{/book.value.summary}}
+
+				{{#book.value.author}}
+				<p>Author: {{book.value.author}}</p>
+				{{/book.value.author}}
+
+				{{#book.value.editorial}}
+				<p>Editorial: {{book.value.editorial}}</p>
+				{{/book.value.editorial}}
+
+				{{#book.value.publicationYear}}
+				<p>Publication year: {{book.value.publicationYear}}</p>
+				{{/book.value.publicationYear}}
+
+			</div>
+		</div>
+		<div class="center">
+			<a class="button" href="/">Back</a>
+			<a class="button" href="/book/{{book.key}}/delete">Delete book</a>
+		</div>
+
+		<div class="red-border center">
+			<form action="/book/{{book.key}}/comments/new" method="post" class="form-group" style="display: flex; flex-direction: row; margin-top: 2rem">
+				<label for="username">Username</label>
+				<input id="username" type='text' name='username' required value='{{#username}}{{.}}{{/username}}'/>
+				<label for="content">Comment</label>
+				<input id="content" type='text' name='content' required/>
+				<label for="score">Score</label>
+				<input id="score" type='number' name='score' min="0" max="5" required/>
+				<input type='submit' value='Create'/>
+			</form>
+		</div>
+
+		<div class="center" style="flex-direction: column">
+			<h3>Comments</h3>
+			{{#book.value.comments.entrySet}}
+			<ul>
+				<li>
+					{{value.content}} : {{value.score}}
+					<a class="button" href="/book/{{book.key}}/comments/{{key}}/delete">Delete comment</a>
+				</li>
+			</ul>
+			{{/book.value.comments.entrySet}}
+			<br>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+	<a href="/">Back</a>
+</body>
+</html>

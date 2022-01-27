@@ -1,0 +1,52 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="/css/style.css" />
+	<title></title>
+</head>
+<body>
+
+	<form action="/book/new" method="post">
+		<div class="container red-border form-group" style="flex-direction: column;">
+			<div>
+				<label for="title">Title</label>
+				<input id="title" type='text' name='title' required/>
+			</div>
+
+			<div>
+				<label for="author">Author</label>
+				<input id="author" type='text' name='author'/>
+			</div>
+
+			<div>
+				<label for="editorial">Editorial</label>
+				<input id="editorial" type='text' name='editorial'/>
+			</div>
+
+			<div>
+				<label for="publicationYear">Publication Year</label>
+				<input id="publicationYear" type="number" name='publicationYear' min="1" max="2099" step="1" />
+			</div>
+
+			<div>
+				<label for="summary">Summary</label>
+				<textarea id="summary" name='summary' rows=5 cols=40></textarea>
+			</div>
+
+
+			<div>
+				<input type='submit' value='Create'/>
+				<a class="button" href="/">Back</a>
+			</div>
+
+		</div>
+
+
+
+	</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor user
+actor externalSystem
+
+user -down-> (openBooks)
+user -down-> (openBook)
+user -down-> (createBook)
+user -down-> (deleteBook)
+user -down-> (createBookComment)
+user -down-> (deleteBookComment)
+
+externalSystem -down-> (listBooks)
+externalSystem -down-> (getBookWithComments)
+externalSystem -down-> (createBook)
+externalSystem -down-> (deleteBook)
+externalSystem -down-> (createBookComment)
+externalSystem -down-> (getBookComment)
+externalSystem -down-> (deleteComment)
+@enduml

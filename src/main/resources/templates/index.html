@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <title></title>
+</head>
+
+    <body>
+    <div class="container">
+        <div  style="width: 50vw;">
+
+            <div class="red-border"  style="padding: 5%">
+                <div >
+                    <h3>Books</h3>
+                </div>
+                {{#books.entrySet}}
+                <ul>
+                    <li><a href="/book/{{key}}">{{value.title}}</a></li>
+                </ul>
+                {{/books.entrySet}}
+
+                {{^books.entrySet}}
+                <p>No books</p>
+                {{/books.entrySet}}
+
+            </div>
+            <div class="center">
+                <a class="button" href="/new_book.html">New Book</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    </body>
+</html>
